@@ -1,0 +1,13 @@
+*.out
+*.log
+*.tmp
+tmp/*
+*.bz2
+*.tar
+*.tar.gz
+tester
+*.swp
+.idea
+__pycache__
+*/__pycache__
+*test*

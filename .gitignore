@@ -10,4 +10,4 @@ tester
 .idea
 __pycache__
 */__pycache__
-*test*
+tmp.*

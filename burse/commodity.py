@@ -25,6 +25,8 @@ class Commodity:
         :param buy_price: new buy price
         :param sell_price: new sell price
         """
+        if buy_price > sell_price:
+            raise AttributeError("Buy price is higher than sell price")
         self.buy_price = buy_price
         self.sell_price = sell_price
 
@@ -52,7 +54,7 @@ class Commodity:
         """
         :return: string description for commodity
         """
-        return f"{self.name}: \n\tBuy for {self.buy_price}\n\tSell for: {self.sell_price}>"
+        return f"{self.name}: \n\tBuy for: {self.buy_price}\n\tSell for: {self.sell_price}>"
 
     def __getitem__(self, time) -> dict|None:
         """

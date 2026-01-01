@@ -1,5 +1,8 @@
-import streamlit as st
+#pylint: disable=E0401,C0301,C0103
+"""Page that allows user to create new order"""
+
 from random import randint
+import streamlit as st
 
 st.set_page_config(
     page_title="Order",

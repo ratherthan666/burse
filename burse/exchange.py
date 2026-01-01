@@ -1,3 +1,4 @@
+#pylint: disable=C0301,R0903
 """Module for class representing Exchange"""
 
 import random
@@ -87,8 +88,7 @@ class Exchange:
     def _control_and_update_prices(self, commodity_name: str, new_buy: float, new_sell: float):
         """Controls some rules (prices bigger than 0, buy < sell) and updates prices"""
 
-        if new_buy < self._MIN_SPREAD:
-            new_buy = self._MIN_SPREAD
+        new_buy = max(new_buy, self._MIN_SPREAD)
 
         if new_sell <= new_buy:
             new_sell = new_buy * (1 + self._MIN_SPREAD)

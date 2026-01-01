@@ -1,7 +1,10 @@
+#pylint: disable=E0401,C0301,C0103
+"""Page that provides user with price movement graphs"""
+
+import datetime as dt
 import streamlit as st
 import matplotlib.pyplot as plt
 import matplotlib.dates as md
-import datetime as dt
 
 if "plot_type" not in st.session_state:
     st.session_state.plot_type = ""
@@ -13,7 +16,7 @@ if "plot_price" not in st.session_state:
     st.session_state.plot_price = ""
 
 def _choosers():
-    st.session_state.plot_type = st.selectbox("Plot type:", ["Single price", "Both prices", "Commodity comparison"])
+    st.session_state.plot_type = st.selectbox("Plot type:",["Single price", "Both prices", "Commodity comparison"])
 
     if st.session_state.plot_type != "Both prices":
         st.session_state.plot_price = st.selectbox("Price type", ["Buy price", "Sell price"])

@@ -164,4 +164,4 @@ class Exchange:
         :return: money spent on this trade
         """
         self._trades_to_process.append(Exchange.Trade(commodity, trade_buy, amount))
-        return amount * self._commodities[commodity].buy_price if trade_buy else self._commodities[commodity].sell_price
+        return amount * (self._commodities[commodity].buy_price if trade_buy else self._commodities[commodity].sell_price)
